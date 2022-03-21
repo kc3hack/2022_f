@@ -7,6 +7,7 @@ public class ClickPhoneButton : MonoBehaviour
 {
     [SerializeField] private Canvas phoneScreenCanvas;
     public void OnClick(){
-        phoneScreenCanvas.gameObject.SetActive(true);
+        this.phoneScreenCanvas.gameObject.SetActive(true);
+        Debug.Log("This button is phone");
     }
 }
