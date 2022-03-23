@@ -62,17 +62,22 @@ public class gaisyutuCanvas : MonoBehaviour
     // Start is called before the first frame update
     public void Initialize()
     {
-		Vector2 tp = this.transform.position;
+		Transform ImageTf = transform.Find("MapImage");
+		Vector2 tp = ImageTf.gameObject.GetComponent<Transform>().position;
+		GoButton GoButtonScript = transform.Find("GoImage/GoButton").GetComponent<GoButton>();
 		
 		foreach(Place place in Placelist.Places){
 			if(!place.Reachable)continue;
 			
+			
 			GameObject ObjButton = (GameObject)Instantiate(ButtonPrefab, place.Pos+tp, Quaternion.identity);
-			ObjButton.transform.SetParent(this.transform);	
+			//ObjButton.transform.SetParent(this.transform);
+			ObjButton.transform.SetParent(ImageTf);
 			ObjButton.name = place.Name;
 			SelectButton Script = ObjButton.GetComponent<SelectButton>();
 			Script.ExplanationText = GameObject.Find("Explanation").GetComponent<Text>();
 			Script.ExplanationString = place.Explanation;
+			Script.GoButtonScript = GoButtonScript;
 		}
     }
 }
