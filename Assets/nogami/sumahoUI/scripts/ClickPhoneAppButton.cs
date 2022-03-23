@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class ClickPhoneAppButton : MonoBehaviour
 {
+    [SerializeField] private Canvas appCanvas;
+    [SerializeField] private Canvas thisCanvas;
     public void OnClick(){
-        Debug.Log("This button clicked!");
+        appCanvas.gameObject.SetActive(true);
+        thisCanvas.gameObject.SetActive(false);
     }
 }
