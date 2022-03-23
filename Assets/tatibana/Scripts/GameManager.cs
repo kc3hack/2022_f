@@ -5,13 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //日にち
-    private int day;
+    [SerializeField] private  int day;
 
     //イベント情報
-    private List<JkEvent> eventList = new List<JkEvent>();
+    [SerializeField] private List<JkEvent> eventList = new List<JkEvent>();
 
     //主人公のパラメータ
-    private JkModel jk;
+    [SerializeField] private JkModel jk;
     // Start is called before the first frame update
     void Start()
     {
