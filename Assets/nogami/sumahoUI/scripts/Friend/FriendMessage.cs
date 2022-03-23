@@ -7,7 +7,7 @@ public class FriendMessage : MonoBehaviour
 {
     [SerializeField] private Text friendName;
     [SerializeField] private Text message;
-    public void initialize(FriendStatusValue friendStatus){
+    public void FriendStatusInitialize(FriendStatusValue friendStatus){
         friendName.text = friendStatus.GetName();
         message.text = friendStatus.GetMessage();
     }

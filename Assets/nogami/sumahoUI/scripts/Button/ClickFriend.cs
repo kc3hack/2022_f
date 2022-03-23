@@ -16,7 +16,7 @@ public class ClickFriend : MonoBehaviour
 
     public void OnClick(){
         MessageScreen.gameObject.SetActive(true);
-        this.friendMessage.initialize();
+        this.friendMessage.FriendStatusInitialize(fMessageController.GetFriendValue(messageNum));
         thisCanvas.gameObject.SetActive(false);
     }
 }
