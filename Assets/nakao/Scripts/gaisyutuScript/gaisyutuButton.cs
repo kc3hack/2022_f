@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class gaisyutuButton : MonoBehaviour
 {
-	[SerializeField] private Canvas phoneScreenCanvas;
+	[SerializeField] private Canvas gaisyutuScreenCanvas;
 	
 	public void  OnClick() {
-		phoneScreenCanvas.gameObject.SetActive(true);
-		phoneScreenCanvas.GetComponent<gaisyutuCanvas>().Initialize();
+		//if()
+		gaisyutuScreenCanvas.gameObject.SetActive(true);
+		gaisyutuScreenCanvas.GetComponent<gaisyutuCanvas>().Initialize();
 	}
 	
     // Start is called before the first frame update
     void Start()
     {
-		phoneScreenCanvas.gameObject.SetActive(false);
-		
+		gaisyutuScreenCanvas.gameObject.SetActive(false);
     }
 }

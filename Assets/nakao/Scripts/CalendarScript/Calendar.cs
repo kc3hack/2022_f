@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Calendar : MonoBehaviour
 {
@@ -11,12 +12,17 @@ public class Calendar : MonoBehaviour
     //[SerializeField] private List<List<FriendStatusValue>>   SumahoEventList = new List<List<FriendStatusValue>>();
     //[SerializeField] private List<List<JkEvent>> CalendarEventList = new List<List<JkEvent>>();
 
+	//表示するカレンダーのスプライト
+	[SerializeField] private List<Sprite> Sprites;
+	private Image nowImage;
+
     //主人公のパラメータ
     [SerializeField] private JkModel jk;
     // Start is called before the first frame update
     void Start()
     {
         day = 1;
+		nowImage = this.GetComponent<Image>();
 		Initialize();
     }
 
@@ -26,9 +32,18 @@ public class Calendar : MonoBehaviour
         return day;
     }
 	
+	public void Update(){
+		ChangeSprite();
+	}
+	
+	public void ChangeSprite(){
+		nowImage.sprite = Sprites[day-1];
+	}
+	
 	public void setDay(int day)
 	{
 		this.day = day;
+		ChangeSprite();
 	}
 	
 	public void Initialize(){

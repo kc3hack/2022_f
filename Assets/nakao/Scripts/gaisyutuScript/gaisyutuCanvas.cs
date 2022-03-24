@@ -72,16 +72,19 @@ public class gaisyutuCanvas : MonoBehaviour
 	);
 	
 	[SerializeField] private GameObject ButtonPrefab;
-	public Calendar CalendarScript;
+	[SerializeField] private GameObject CalendarObj;
+	private Calendar CalendarScript;
 	
 	public void Start(){
-		CalendarScript = GameObject.Find("CalendarObj").GetComponent<Calendar>();
+		//CalendarScript = GameObject.Find("CalendarObj").GetComponent<Calendar>();
 	}
 	
     // Start is called before the first frame update
     public void Initialize()
     {
+		CalendarScript = CalendarObj.GetComponent<Calendar>();
 		var EventList = CalendarScript.getGaisyutuEvent();
+
 		foreach(var Event in EventList){
 			Placelist.SearchAndTrue(Event.PlaceName);
 		}
@@ -93,9 +96,7 @@ public class gaisyutuCanvas : MonoBehaviour
 		foreach(Place place in Placelist.Places){
 			if(!place.Reachable)continue;
 			
-			
 			GameObject ObjButton = (GameObject)Instantiate(ButtonPrefab, place.Pos+tp, Quaternion.identity);
-			//ObjButton.transform.SetParent(this.transform);
 			ObjButton.transform.SetParent(ImageTf);
 			ObjButton.name = place.Name;
 			SelectButton Script = ObjButton.GetComponent<SelectButton>();
