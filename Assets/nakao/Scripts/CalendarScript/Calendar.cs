@@ -18,7 +18,7 @@ public class Calendar : MonoBehaviour
     [SerializeField] private  int day;
     //イベント情報
     [SerializeField] private List<List<isGoEvent>> GaisyutuEventList = new List<List<isGoEvent>>();
-    //[SerializeField] private List<List<FriendStatusValue>>   SumahoEventList = new List<List<FriendStatusValue>>();
+    [SerializeField] private List<List<FriendStatusValue>> SumahoEventList = new List<List<FriendStatusValue>>();
     [SerializeField] private List<int> CalendarEventList = new List<int>();
 
 	//表示するカレンダーのスプライト
@@ -52,6 +52,8 @@ public class Calendar : MonoBehaviour
 	}
 	
 	public void Initialize(){
+		//テストケースの作成
+
 		for(int i=0; i<31; i++){
 			GaisyutuEventList.Add(new List<isGoEvent>());
 			GaisyutuEventList[i].Add(new isGoEvent("Place0"));
@@ -67,32 +69,41 @@ public class Calendar : MonoBehaviour
 			3,	//（BBQ）		　	四日目のイベント
 			4,	//（Camp）　		五日目のイベント
 			0,	//（Natumatri）　	六日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
-			0,	//（Empty）　		七日目のイベント
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		
+			0,	//（Empty）　		三十一日目のイベント
 		};
+		
+		for(int i=0; i<31; i++){
+			List<FriendStatusValue> OneDayMessage = new List<FriendStatusValue>();
+			FriendStatusValue fsv = new FriendStatusValue();
+			fsv.SetName("日付ちゃん"); fsv.SetMessage($"今日は{i+1}日目やで");
+			OneDayMessage.Add(fsv);
+			
+			SumahoEventList.Add(OneDayMessage);
+		}
 	}
 
     //イベント情報のゲッター
@@ -101,10 +112,10 @@ public class Calendar : MonoBehaviour
         return GaisyutuEventList[day-1];
     }
 	//イベント情報のゲッター
-    /*public List<FriendStatusValue> getSumahoEvent()
+    public List<FriendStatusValue> getSumahoEvent() //今日の友達からのメッセージを取得する
     {
         return SumahoEventList[day-1];
-    }*/
+    }
 	//イベント情報のゲッター
     public List<int> getClandarEvent()
     {
