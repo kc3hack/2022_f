@@ -23,6 +23,7 @@ public class Calendar : MonoBehaviour
 
 	//表示するカレンダーのスプライト
 	[SerializeField] private List<Sprite> Sprites;
+	[SerializeField] private GameObject GameManager;
 	private Image nowImage;
 
     //主人公のパラメータ
@@ -30,8 +31,9 @@ public class Calendar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        day = 1;
+        day = GameManager.GetComponent<GameManagerNakao>().getDay();
 		nowImage = this.GetComponent<Image>();
+		ChangeSprite();
 		Initialize();
     }
 
