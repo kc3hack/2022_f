@@ -11,12 +11,48 @@ public enum EventEnum {
 	Umi			= 4
 }
 
-public class MessageAndDistination{
+public class MessageAndNum{
 	public string Message;
-	public int num;
+	public int EventNum;
+	
+	public MessageAndNum(string message, int num){
+		Message = message;
+		EventNum = num;
+	}
 }
 
-
+public class MessageAndDistination{
+	public List<string> name = new List<string>() {
+		"アッコ",
+		"さっちゃん",
+		"メンヘラ子",
+		"れーにゃ",
+		"あめ",
+		"地雷系",
+		"なつき",
+		"ゆき",
+	};
+	public List<MessageAndNum> messageAndnum = new List<MessageAndNum>() {
+		new MessageAndNum("今日バーベキューいかない？", 1),
+		new MessageAndNum("焼肉食べに行こう", 1),
+		new MessageAndNum("今日お祭りやってるよ～", 2),
+		new MessageAndNum("神輿おがみに行こうよ^^", 2),
+		new MessageAndNum("今からキャンプ行こ～ :)", 3),
+		new MessageAndNum("みんなで海行くけど一緒に来る？", 4),
+		new MessageAndNum("海行きて～", 4),
+	};
+	
+	public string Name;
+	public string Message;
+	public int EventNum;
+	
+	public MessageAndDistination(){
+		Name = name[Random.Range(0, 8)];
+		MessageAndNum MA = messageAndnum[Random.Range(0, 7)];
+		Message = MA.Message;
+		EventNum = MA.EventNum;
+	}
+}
 
 public class Calendar : MonoBehaviour
 {
@@ -132,8 +168,33 @@ public class Calendar : MonoBehaviour
 				}
 			}else{
 				CalendarEventList.Add(0);
-			}	
+			}
+			
+			List<FriendStatusValue> OneDayMessage = new List<FriendStatusValue>();
+			if(Random.Range(0, 2) == 1){
+				OneDayMessage = AddMessage(i, OneDayMessage);
+				if(Random.Range(0, 2) == 1){
+					OneDayMessage = AddMessage(i, OneDayMessage);
+					if(Random.Range(0, 2) == 1){
+						OneDayMessage = AddMessage(i, OneDayMessage);
+					}
+				}
+			}
+			SumahoEventList.Add(OneDayMessage);
 		}
+	}
+	
+	public List<FriendStatusValue> AddMessage(int i, List<FriendStatusValue> ODM){
+		MessageAndDistination MAD = new MessageAndDistination();
+		FriendStatusValue fsv = new FriendStatusValue();
+		fsv.SetName(MAD.Name); fsv.SetMessage(MAD.Message);
+		ODM.Add(fsv);
+		
+		EventEnum En = (EventEnum)System.Enum.ToObject(typeof(EventEnum), MAD.EventNum);
+		string place = En.ToString();
+		GaisyutuEventList[i].Add(new isGoEvent(place));
+		
+		return ODM;
 	}
 
     //イベント情報のゲッター
