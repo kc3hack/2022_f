@@ -58,7 +58,7 @@ public class gaisyutuCanvas : MonoBehaviour
 {
 	public PlaceList Placelist = new PlaceList(
 		new List<Place>() {
-			new Place("Place0", new Vector2(-525.0f,  -47.0f), false, "This is Place0 "),
+			/*new Place("Place0", new Vector2(-525.0f,  -47.0f), false, "This is Place0 "),
 			new Place("Place1", new Vector2(-265.0f, -232.0f), false, "This is Place1 "),
 			new Place("Place2", new Vector2(  20.0f, -467.0f), false, "This is Place2 "),
 			new Place("Place3", new Vector2(-233.0f,  139.0f), false, "This is Place3 "),
@@ -67,7 +67,12 @@ public class gaisyutuCanvas : MonoBehaviour
 			new Place("Place6", new Vector2(  12.0f,  438.0f), false, "This is Place6 "),
 			new Place("Place7", new Vector2( 274.0f,  180.0f), false, "This is Place7 "),
 			new Place("Place8", new Vector2( 550.0f,  -46.0f), false, "This is Place8 "),
-			new Place("Place9", new Vector2(-525.0f,  -47.0f), false, "This is Place9 "),
+			new Place("Place9", new Vector2(-525.0f,  -47.0f), false, "This is Place9 "),*/
+			
+			new Place("ビーチ", new Vector2(-525.0f,  -47.0f), false, "晴れの日に栄えるとSNSで人気のビーチ"),
+			new Place("大通り", new Vector2(-265.0f, -232.0f), false, "年に数回、大きな祭りが開かれる通り"),
+			new Place("キャンプ貸し出し場", new Vector2(  20.0f, -467.0f), false, "格安で楽しめる隠れた穴場キャンプ場"),
+			new Place("バーベキュー会場", new Vector2(-233.0f,  139.0f), false, "推ししの配信者の出没報告が多数あるバーベキュー会場"),
 		}
 	);
 	

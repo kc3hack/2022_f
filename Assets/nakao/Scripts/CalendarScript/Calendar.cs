@@ -11,6 +11,13 @@ public enum EventEnum {
 	Umi			= 4
 }
 
+public class MessageAndDistination{
+	public string Message;
+	public int num;
+}
+
+
+
 public class Calendar : MonoBehaviour
 {
 	
@@ -56,7 +63,7 @@ public class Calendar : MonoBehaviour
 	public void Initialize(){
 		//テストケースの作成
 
-		for(int i=0; i<31; i++){
+		/*for(int i=0; i<31; i++){
 			GaisyutuEventList.Add(new List<isGoEvent>());
 			GaisyutuEventList[i].Add(new isGoEvent("Place0"));
 			GaisyutuEventList[i].Add(new isGoEvent("Place1"));
@@ -105,6 +112,27 @@ public class Calendar : MonoBehaviour
 			OneDayMessage.Add(fsv);
 			
 			SumahoEventList.Add(OneDayMessage);
+		}*/
+		for(int i=0; i<31; i++){
+			//Random.Range(0, 2);
+			GaisyutuEventList.Add(new List<isGoEvent>());
+			
+			if(Random.Range(0, 3) == 1){
+				int EventNum1 = Random.Range(1, 5);
+				EventEnum En1 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum1);
+				string place1 = En1.ToString();
+				GaisyutuEventList[i].Add(new isGoEvent(place1));
+				CalendarEventList.Add(EventNum1);
+				
+				if(Random.Range(0, 5) == 1){
+					int EventNum2 = Random.Range(1, 5);
+					EventEnum En2 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum2);
+					string place2 = En2.ToString();
+					GaisyutuEventList[i].Add(new isGoEvent(place2));
+				}
+			}else{
+				CalendarEventList.Add(0);
+			}	
 		}
 	}
 
