@@ -11,6 +11,49 @@ public enum EventEnum {
 	Umi			= 4
 }
 
+public class MessageAndNum{
+	public string Message;
+	public int EventNum;
+	
+	public MessageAndNum(string message, int num){
+		Message = message;
+		EventNum = num;
+	}
+}
+
+public class MessageAndDistination{
+	public List<string> name = new List<string>() {
+		"アッコ",
+		"さっちゃん",
+		"メンヘラ子",
+		"れーにゃ",
+		"あめ",
+		"地雷系",
+		"なつき",
+		"ゆき",
+	};
+	public List<MessageAndNum> messageAndnum = new List<MessageAndNum>() {
+		new MessageAndNum("今日バーベキューいかない？", 1),
+		new MessageAndNum("焼肉食べに行こう", 1),
+		new MessageAndNum("今日お祭りやってるよ～", 2),
+		new MessageAndNum("神輿おがみに行こうよ^^", 2),
+		new MessageAndNum("今からキャンプ行こ～ :)", 3),
+		new MessageAndNum("みんなで海行くけど一緒に来る？", 4),
+		new MessageAndNum("海行きて～", 4),
+	};
+	
+	public string Name;
+	public string Message;
+	public int EventNum;
+	
+	public MessageAndDistination(){
+		Name = name[Random.Range(0, 8)];
+		MessageAndNum MA = messageAndnum[Random.Range(0, 7)];
+		Message = MA.Message;
+		EventNum = MA.EventNum;
+	}
+}
+
 public class Calendar : MonoBehaviour
 {
 	
@@ -23,6 +66,7 @@ public class Calendar : MonoBehaviour
 
 	//表示するカレンダーのスプライト
 	[SerializeField] private List<Sprite> Sprites;
+	[SerializeField] private GameObject GameManager;
 	private Image nowImage;
 
     //主人公のパラメータ
@@ -30,8 +74,9 @@ public class Calendar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        day = 1;
+        day = GameManager.GetComponent<GameManagerNakao>().getDay();
 		nowImage = this.GetComponent<Image>();
+		ChangeSprite();
 		Initialize();
     }
 
@@ -54,7 +99,7 @@ public class Calendar : MonoBehaviour
 	public void Initialize(){
 		//テストケースの作成
 
-		for(int i=0; i<31; i++){
+		/*for(int i=0; i<31; i++){
 			GaisyutuEventList.Add(new List<isGoEvent>());
 			GaisyutuEventList[i].Add(new isGoEvent("Place0"));
 			GaisyutuEventList[i].Add(new isGoEvent("Place1"));
@@ -103,7 +148,53 @@ public class Calendar : MonoBehaviour
 			OneDayMessage.Add(fsv);
 			
 			SumahoEventList.Add(OneDayMessage);
+		}*/
+		for(int i=0; i<31; i++){
+			//Random.Range(0, 2);
+			GaisyutuEventList.Add(new List<isGoEvent>());
+			
+			if(Random.Range(0, 3) == 1){
+				int EventNum1 = Random.Range(1, 5);
+				EventEnum En1 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum1);
+				string place1 = En1.ToString();
+				GaisyutuEventList[i].Add(new isGoEvent(place1));
+				CalendarEventList.Add(EventNum1);
+				
+				if(Random.Range(0, 5) == 1){
+					int EventNum2 = Random.Range(1, 5);
+					EventEnum En2 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum2);
+					string place2 = En2.ToString();
+					GaisyutuEventList[i].Add(new isGoEvent(place2));
+				}
+			}else{
+				CalendarEventList.Add(0);
+			}
+			
+			List<FriendStatusValue> OneDayMessage = new List<FriendStatusValue>();
+			if(Random.Range(0, 2) == 1){
+				OneDayMessage = AddMessage(i, OneDayMessage);
+				if(Random.Range(0, 2) == 1){
+					OneDayMessage = AddMessage(i, OneDayMessage);
+					if(Random.Range(0, 2) == 1){
+						OneDayMessage = AddMessage(i, OneDayMessage);
+					}
+				}
+			}
+			SumahoEventList.Add(OneDayMessage);
 		}
+	}
+	
+	public List<FriendStatusValue> AddMessage(int i, List<FriendStatusValue> ODM){
+		MessageAndDistination MAD = new MessageAndDistination();
+		FriendStatusValue fsv = new FriendStatusValue();
+		fsv.SetName(MAD.Name); fsv.SetMessage(MAD.Message);
+		ODM.Add(fsv);
+		
+		EventEnum En = (EventEnum)System.Enum.ToObject(typeof(EventEnum), MAD.EventNum);
+		string place = En.ToString();
+		GaisyutuEventList[i].Add(new isGoEvent(place));
+		
+		return ODM;
 	}
 
     //イベント情報のゲッター

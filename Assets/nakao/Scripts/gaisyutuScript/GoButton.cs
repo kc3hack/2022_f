@@ -5,8 +5,10 @@ using UnityEngine;
 public class GoButton : MonoBehaviour
 {
 	public string Destination;
+	[SerializeField] private GameObject GameManager;
 	
     public void  OnClick() {
-		Debug.Log(Destination);
+		//Debug.Log(Destination);
+		GameManager.GetComponent<GameManagerNakao>().SceneTransition("TestScene");
 	}
 }
