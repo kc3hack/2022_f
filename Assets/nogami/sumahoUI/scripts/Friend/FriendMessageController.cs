@@ -21,7 +21,6 @@ public class FriendMessageController : MonoBehaviour
         todayFriendCount = 0;
     }
     public void SetupFriendValue(){
-        Debug.Log("1");
         friendValue.Clear();
         friendValue.AddRange(calendar.getSumahoEvent());
         todayFriendCount = friendValue.Count;
