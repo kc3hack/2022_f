@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sleep : JkEvent
+public class Comic : JkEvent
 {
     private void Awake(){
         this.Initialize();
     }
     private void Initialize(){
-        healthValue = -4;
+        healthValue = -8;
         infectionValue = -7;
-        stressValue = 8;
+        stressValue = 5;
     }
 }
