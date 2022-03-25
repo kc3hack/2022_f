@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public enum EventEnum {
 	Empty 		= 0,
 	BBQ 		= 1,
-	Natumatri 	= 2,
+	Natumaturi 	= 2,
 	Camp 		= 3,
 	Umi			= 4
 }
@@ -150,18 +150,20 @@ public class Calendar : MonoBehaviour
 			SumahoEventList.Add(OneDayMessage);
 		}*/
 		for(int i=0; i<31; i++){
-			//Random.Range(0, 2);
 			GaisyutuEventList.Add(new List<isGoEvent>());
 			
-			if(Random.Range(0, 3) == 1){
+			if(Random.Range(0, 2) == 0){
 				int EventNum1 = Random.Range(1, 5);
 				EventEnum En1 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum1);
 				string place1 = En1.ToString();
 				GaisyutuEventList[i].Add(new isGoEvent(place1));
 				CalendarEventList.Add(EventNum1);
 				
-				if(Random.Range(0, 5) == 1){
-					int EventNum2 = Random.Range(1, 5);
+				if(Random.Range(0, 5) == 3){
+					int EventNum2;
+					do{
+						EventNum2 = Random.Range(1, 5);
+					}while(EventNum1 == EventNum2);
 					EventEnum En2 = (EventEnum)System.Enum.ToObject(typeof(EventEnum), EventNum2);
 					string place2 = En2.ToString();
 					GaisyutuEventList[i].Add(new isGoEvent(place2));
