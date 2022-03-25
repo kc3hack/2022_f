@@ -9,7 +9,7 @@ public class EventIconButton : MonoBehaviour
 
     [SerializeField] private Text whiteBoxText;
 
-    [SerializeField] private Sprite eventImage;
+    //[SerializeField] private Sprite eventImage;
 
     [SerializeField] private string eventText;
 
@@ -25,9 +25,19 @@ public class EventIconButton : MonoBehaviour
         
     }
 
+    public void setSprite(Sprite sprite)
+    {
+        this.GetComponent<Image>().sprite = sprite;
+    }
+
+    public void setText(string text)
+    {
+        eventText = text;
+    }
+
     public void OnClick()
     {
-        whiteBoxImage.sprite = eventImage;
+        whiteBoxImage.sprite = this.GetComponent<Image>().sprite;
 
         whiteBoxText.text = eventText;
     }

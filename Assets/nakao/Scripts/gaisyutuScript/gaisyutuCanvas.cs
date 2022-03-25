@@ -69,10 +69,10 @@ public class gaisyutuCanvas : MonoBehaviour
 			new Place("Place8", new Vector2( 550.0f,  -46.0f), false, "This is Place8 "),
 			new Place("Place9", new Vector2(-525.0f,  -47.0f), false, "This is Place9 "),*/
 			
-			new Place("ビーチ", new Vector2(-525.0f,  -47.0f), false, "晴れの日に栄えるとSNSで人気のビーチ"),
-			new Place("大通り", new Vector2(-265.0f, -232.0f), false, "年に数回、大きな祭りが開かれる通り"),
-			new Place("キャンプ貸し出し場", new Vector2(  20.0f, -467.0f), false, "格安で楽しめる隠れた穴場キャンプ場"),
-			new Place("バーベキュー会場", new Vector2(-233.0f,  139.0f), false, "推ししの配信者の出没報告が多数あるバーベキュー会場"),
+			new Place("Umi", new Vector2(-525.0f,  -47.0f), false, "晴れの日に栄えると\nSNSで人気のビーチ"),
+			new Place("Natumaturi", new Vector2(-265.0f, -232.0f), false, "割と頻繁に\n鮮やかな祭りが\n開かれる通り"),
+			new Place("Camp", new Vector2(  20.0f, -467.0f), false, "格安で楽しめる\n隠れた穴場キャンプ場"),
+			new Place("BBQ", new Vector2(-233.0f,  139.0f), false, "推ししの配信者の\nお気に入りの\nバーベキュー会場"),
 		}
 	);
 	
