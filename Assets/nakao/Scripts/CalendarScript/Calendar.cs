@@ -171,11 +171,11 @@ public class Calendar : MonoBehaviour
 			}
 			
 			List<FriendStatusValue> OneDayMessage = new List<FriendStatusValue>();
-			if(Random.Range(0, 2) == 1){
+			if(Random.Range(0, 6) < 4){
 				OneDayMessage = AddMessage(i, OneDayMessage);
-				if(Random.Range(0, 2) == 1){
+				if(Random.Range(0, 6) < 2){
 					OneDayMessage = AddMessage(i, OneDayMessage);
-					if(Random.Range(0, 2) == 1){
+					if(Random.Range(0, 6) < 2){
 						OneDayMessage = AddMessage(i, OneDayMessage);
 					}
 				}
@@ -185,8 +185,19 @@ public class Calendar : MonoBehaviour
 	}
 	
 	public List<FriendStatusValue> AddMessage(int i, List<FriendStatusValue> ODM){
-		MessageAndDistination MAD = new MessageAndDistination();
 		FriendStatusValue fsv = new FriendStatusValue();
+		MessageAndDistination MAD;
+		bool flag;
+		do{
+			flag = false;
+			MAD = new MessageAndDistination();
+			for(int j=0; j<ODM.Count; j++){
+				if(ODM[j].GetName() == MAD.Name){
+					flag = true;
+					break;
+				}
+			}
+		}while(flag);
 		fsv.SetName(MAD.Name); fsv.SetMessage(MAD.Message);
 		ODM.Add(fsv);
 		
