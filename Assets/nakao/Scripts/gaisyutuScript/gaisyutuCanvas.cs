@@ -72,16 +72,18 @@ public class gaisyutuCanvas : MonoBehaviour
 			new Place("Place8", new Vector2( 550.0f,  -46.0f), false, "This is Place8 "),
 			new Place("Place9", new Vector2(-525.0f,  -47.0f), false, "This is Place9 "),*/
 			
-			new Place("Umi", new Vector2(-525.0f,  -47.0f), false, "晴れの日に栄えると\nSNSで人気のビーチ"),
-			new Place("Natumaturi", new Vector2(-265.0f, -232.0f), false, "割と頻繁に\n鮮やかな祭りが\n開かれる通り"),
-			new Place("Camp", new Vector2(  20.0f, -467.0f), false, "格安で楽しめる\n隠れた穴場キャンプ場"),
-			new Place("BBQ", new Vector2(-233.0f,  139.0f), false, "推ししの配信者の\nお気に入りの\nバーベキュー会場"),
+			new Place("Umi", new Vector2(-400.0f,  70.0f), false, "晴れの日に栄えると\nSNSで人気のビーチ"),
+			new Place("Natumaturi", new Vector2(330.0f, -260.0f), false, "割と頻繁に\n鮮やかな祭りが\n開かれる通り"),
+			new Place("Camp", new Vector2(  0.0f, 70.0f), false, "格安で楽しめる\n隠れた穴場キャンプ場"),
+			new Place("BBQ", new Vector2(510.0f,  350.0f), false, "推ししの配信者の\nお気に入りの\nバーベキュー会場"),
 		}
 	);
 	
 	[SerializeField] private GameObject ButtonPrefab;
 	[SerializeField] private GameObject CalendarObj;
-	[SerializeField] private float	scale = 0.007f;
+	[SerializeField] private Sprite BBQicon, Natumaturiicon,Umiicon, Campicon;
+	//[SerializeField] private float	scale = 0.007f;
+	[SerializeField] private float	scale = 1f;
 	private Calendar CalendarScript;
 	
 	public void Start(){
@@ -109,6 +111,23 @@ public class gaisyutuCanvas : MonoBehaviour
 			GameObject ObjButton = (GameObject)Instantiate(ButtonPrefab, place.Pos*scale+tp, Quaternion.identity);
 			ObjButton.transform.SetParent(ImageTf);
 			ObjButton.name = place.Name;
+			switch(ObjButton.name){
+				case "Umi":
+					ObjButton.GetComponent<Image>().sprite = Umiicon;
+					break;
+					
+				case "Natumaturi":
+					ObjButton.GetComponent<Image>().sprite = Natumaturiicon;
+					break;
+					
+				case "BBQ":
+					ObjButton.GetComponent<Image>().sprite = BBQicon;
+					break;
+					
+				case "Camp":
+					ObjButton.GetComponent<Image>().sprite = Campicon;
+					break;
+			}
 			SelectButton Script = ObjButton.GetComponent<SelectButton>();
 			Script.ExplanationText = GameObject.Find("Explanation").GetComponent<Text>();
 			Script.ExplanationString = place.Explanation;

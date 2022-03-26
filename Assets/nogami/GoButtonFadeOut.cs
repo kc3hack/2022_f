@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GoButtonFadeOut : MonoBehaviour
 {
     public static bool isFadeOut = false;
-    private float fadeSpeed = 0.002f;
+    private float fadeSpeed = 0.01f;
     private float red, green, blue, alfa;
     [SerializeField] Image fadeImage;
     [SerializeField] GoButton goButton;

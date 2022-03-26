@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 1805199765}
   - component: {fileID: 1805199764}
   - component: {fileID: 1805199763}
+  - component: {fileID: 1805199770}
   - component: {fileID: 1805199762}
   m_Layer: 5
   m_Name: Canvas
@@ -457,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1371876072}
-  nextSceneName: Compile
+  nextSceneName: Result
   lastScene: 0
 --- !u!82 &1805199763
 AudioSource:
@@ -568,14 +569,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   T: {fileID: 2044832871}
-  next: Compile
+  next: OpenResult
   serihu:
-  - "\uFF4A\uFF4B\u5B50\u300C\u30E4\u30C3\u30DB\u30FC\uFF01\uFF01\u79C1\u306E\u540D\u524D\u306F\uFF4A\uFF4B\u5B50\u3002n\u4ECA\u3092\u3068\u304D\u3081\u304F\u5973\u5B50\u9AD8\u751F\uFF01"
-  - "\u304A\u3082\u3080\u308D\u306BPCR\u691C\u67FB\u53D7\u3051\u305F\u3089\u7D50\u679C\u304C\u967D\u6027\u3060\u3063\u305F\u3093\u3060\u2026\u3002"
-  - "\u3053\u306E\u307E\u307E\u3058\u3083\u5BB6\u65CF\u3084\u53CB\u9054\u306B\u8FF7\u60D1\u304B\u3051\u3061\u3083\u3046\u2026n\u3069\u3046\u3057\u3088\u3046\u2026"
-  - "\u305D\u3093\u306A\u4E8B\u3092\u601D\u3063\u3066\u3044\u305F\u3089n\u7A81\u7136\u3001\u7A7A\u304B\u3089\u8B0E\u306E\u5149\u306B\u8986\u308F\u308C\u3066..."
-  - "\u6C17\u304C\u3064\u3051\u3070\u30AB\u30EC\u30F3\u30C0\u30FC\u3067\u306F8\u67081\u65E5\u306B\u306A\u3063\u3066\u308B\uFF01\uFF1Fn\u305D\u3046\u304B\u2026\u79C1\u30BF\u30A4\u30E0\u30EA\u30FC\u30D7\u3057\u3066\u304D\u305F\u3093\u3060\u2026"
-  - "\u3088\u30FC\u3057\u3053\u306E\u30C1\u30E3\u30F3\u30B9\u3092\u6D3B\u304B\u3057\u3066\u6B21\u3053\u305D\u306F\u9670\u6027\u306B\u306A\u308B\u3088\u3046\u306B\u9811\u5F35\u308BZO\u2606"
+  - 
   i: 0
   j: 0
   fadeOut: {fileID: 1805199762}
@@ -663,6 +659,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1805199770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805199761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ce185b1d2b2774ca2979acc695923a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  T: {fileID: 2044832871}
+  next: Result
+  serihu:
+  - "\uFF4A\uFF4B\u5B50\u300C\u305D\u3093\u306A...n\u307E\u305F\u967D\u6027..."
+  - "\u79C1\u306F\u590F\u4F11\u307F\u3092\u697D\u3057\u304Fn\u904E\u3054\u3057\u305F\u304B\u3063\u305F\u3060\u3051\u306A\u306E\u306B..."
+  i: 0
+  j: 0
+  fadeOut: {fileID: 1805199762}
 --- !u!1 &1872164988
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0f66fcb729bf1c4caa1145283d9a06f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a1d43245d5dcf847a51be665f1bc1cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
