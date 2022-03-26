@@ -7,6 +7,6 @@ using UnityEngine.SceneManagement;
 public class ClickMainSceneButton : MonoBehaviour
 {
     public void OnClick(){
-        SceneManager.LoadScene("PhoneCommandScene");
+        SceneManager.LoadScene("Compile");
     }
 }

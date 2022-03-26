@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class SleepFadeOut : MonoBehaviour
+public class GoButtonFadeOut : MonoBehaviour
 {
     public static bool isFadeOut = false;
-    private float fadeSpeed = 0.0013f;
+    private float fadeSpeed = 0.002f;
     private float red, green, blue, alfa;
-
     [SerializeField] Image fadeImage;
+    [SerializeField] GoButton goButton;
 
     private void Awake(){
         red = fadeImage.color.r;
@@ -26,11 +25,13 @@ public class SleepFadeOut : MonoBehaviour
     }
 
     private void StartFadeOut(){
+        fadeImage.gameObject.SetActive(true);
         alfa += fadeSpeed;
         this.SetAlpha();
         if(alfa >= 1){
             isFadeOut = false;
-            SceneManager.LoadScene("Compile");
+            fadeImage.gameObject.SetActive(false);
+            goButton.ChangeScene();
         }
     }
     private void SetAlpha(){
