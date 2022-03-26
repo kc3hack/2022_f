@@ -24,7 +24,8 @@ public class JkModel : MonoBehaviour
 
     [SerializeField] private Image jk;
 
-    [SerializeField] private static List<int> infectionData = new List<int>(){
+    [SerializeField] private static List<int> infectionData = new List<int>();
+    /*[SerializeField] private static List<int> infectionData = new List<int>(){
         2,
         2,
         1,
@@ -56,7 +57,7 @@ public class JkModel : MonoBehaviour
         29,
         30,
         31,
-    };
+    };*/
 
     // Start is called before the first frame update
     void Start()
