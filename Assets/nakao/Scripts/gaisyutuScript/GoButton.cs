@@ -8,7 +8,10 @@ public class GoButton : MonoBehaviour
 	[SerializeField] private GameObject GameManager;
 	
     public void  OnClick() {
+		GoButtonFadeOut.isFadeOut = true;
 		//Debug.Log(Destination);
+	}
+	public void ChangeScene(){
 		switch(Destination){
 			case "Umi":
 			GameManager.GetComponent<GameManagerNakao>().SceneTransition("UmiEvent");
