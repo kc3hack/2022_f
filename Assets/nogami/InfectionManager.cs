@@ -7,7 +7,6 @@ public class InfectionManager : MonoBehaviour
     public static InfectionManager infectionInstance {get; private set;}
     private int infectionValue;
     private List<int> infectionValueList;
-    private bool lastDay;
     private void Awake(){
         if(infectionInstance == null){
             infectionInstance = this;
@@ -25,12 +24,10 @@ public class InfectionManager : MonoBehaviour
     }
     public void SetInfectionList(List<int> value){
         infectionValueList = value;
+        Debug.Log(infectionValueList.Count);
 		infectionValue = infectionValueList[30];
     }
     public List<int> GetInfectionList(){
         return infectionValueList;
-    }
-    public void ChangeLastDay(){
-        lastDay = !lastDay;
     }
 }

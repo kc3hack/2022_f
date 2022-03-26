@@ -459,7 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1371876072}
   nextSceneName: Result
-  lastScene: 0
+  isPlayBGM: 1
+  nextBGMNumber: 4
 --- !u!82 &1805199763
 AudioSource:
   m_ObjectHideFlags: 0

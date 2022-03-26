@@ -12,7 +12,8 @@ public class OPEDFadeOut : MonoBehaviour
 
     [SerializeField] Image fadeImage;
     [SerializeField] string nextSceneName;
-    [SerializeField] bool lastScene = false;
+    [SerializeField] bool isPlayBGM = false;
+    [SerializeField] int nextBGMNumber;
 
     private void Awake(){
         red = fadeImage.color.r;
@@ -33,9 +34,10 @@ public class OPEDFadeOut : MonoBehaviour
         this.SetAlpha();
         if(alfa >= 1){
             isFadeOut = false;
-            if(!lastScene){
-                SceneManager.LoadScene(nextSceneName);
+            if(isPlayBGM){
+                BGMManager.BGMInstance.PlayBGM(nextBGMNumber);
             }
+            SceneManager.LoadScene(nextSceneName);
         }
     }
     private void SetAlpha(){

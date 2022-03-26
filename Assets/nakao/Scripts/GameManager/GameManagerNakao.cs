@@ -26,6 +26,9 @@ public class GameManagerNakao : MonoBehaviour
     {
         return day;
     }
+    public void SetDay(int num){
+        day = num;
+    }
 	
     //ステータスを変化させる
     public void changeStates(JkEvent Event)

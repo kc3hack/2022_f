@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class JkModel : MonoBehaviour
 {
 
-    //Œ’N“x Œ¸­‚·‚é‚ÆŠëŒ¯
+    //ï¿½ï¿½ï¿½Nï¿½x ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆŠëŒ¯
     [SerializeField] private static int healthValue = 0;
 
-    //Š´õ“x ‚½‚Ü‚é‚ÆŠëŒ¯
+    //ï¿½ï¿½ï¿½ï¿½ï¿½x ï¿½ï¿½ï¿½Ü‚ï¿½ÆŠëŒ¯
     [SerializeField] private static int infectionValue = 0;
 
-    //ƒXƒgƒŒƒX“x ‚½‚Ü‚é‚ÆŠëŒ¯
+    //ï¿½Xï¿½gï¿½ï¿½ï¿½Xï¿½x ï¿½ï¿½ï¿½Ü‚ï¿½ÆŠëŒ¯
     [SerializeField] private static int stressValue = 0;
 
     [SerializeField] private List<Sprite> gages;
@@ -23,6 +23,7 @@ public class JkModel : MonoBehaviour
     [SerializeField] private Image gage;
 
     [SerializeField] private Image jk;
+    [SerializeField] private Calendar calendar;
 
     [SerializeField] private static List<int> infectionData = new List<int>();
     /*[SerializeField] private static List<int> infectionData = new List<int>(){
@@ -72,22 +73,28 @@ public class JkModel : MonoBehaviour
         
     }
 
-    //healthValue‚ÌƒQƒbƒ^[
+    //healthValueï¿½ÌƒQï¿½bï¿½^ï¿½[
     public int getHealthValue()
     {
         return healthValue;
     }
 
-    //infectionValue‚ÌƒQƒbƒ^[
+    //infectionValueï¿½ÌƒQï¿½bï¿½^ï¿½[
     public int getInfectionValue()
     {
         return infectionValue;
     }
 
-    //stressValue‚ÌƒQƒbƒ^[
+    //stressValueï¿½ÌƒQï¿½bï¿½^ï¿½[
     public int getStressValue()
     {
         return stressValue;
+    }
+    public static void JKInititalize(){
+        healthValue = 0;
+        infectionValue = 0;
+        stressValue = 0;
+        infectionData = new List<int>();
     }
 
     public static List<int> getInfectionData()
@@ -95,7 +102,7 @@ public class JkModel : MonoBehaviour
         return infectionData;
     }
 
-    //ƒXƒe[ƒ^ƒX‚ğ•Ï‰»‚³‚¹‚é
+    //ï¿½Xï¿½eï¿½[ï¿½^ï¿½Xï¿½ï¿½Ï‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void changeStates(int health, int infection, int stress)
     {
         infectionData.Add(infectionValue);
@@ -184,7 +191,9 @@ public class JkModel : MonoBehaviour
 
         if (stressValue >= 70)
         {
-            SceneManager.LoadScene("Utsu");
+            BGMManager.BGMInstance.StopBGM();
+            calendar.Inititalize();
+            SceneManager.LoadScene("Utu");
         }
 
     }

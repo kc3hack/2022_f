@@ -383,7 +383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 276880728}
   nextSceneName: Compile
-  lastScene: 0
+  isPlayBGM: 1
+  nextBGMNumber: 0
 --- !u!82 &1441941661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -497,7 +498,7 @@ MonoBehaviour:
   serihu:
   - "\u30B9\u30C8\u30EC\u30B9\u304C\u6700\u5927\u307E\u3067\u6E9C\u307E\u3063\u3066\u3057\u307E\u3063\u305F\u3002"
   - "jk\u5B50\u306F\u81EA\u66B4\u81EA\u68C4\u306B\u306A\u3063\u3066\u3057\u307E\u3044\u3001n\u30B3\u30ED\u30CA\u3092\u5FD8\u308C\u3066\u904A\u3073\u307E\u304F\u3063\u305F\u3002"
-  - "jk\u5B50\u304C\u30B3\u30ED\u30CA\u306B\u611F\u67D3\u3059\u308B\u306E\u306F\u3082\u306F\u3084\u6642\u9593\u306E\u554F\u984C\u3060\u308D\u3046..."
+  - "jk\u5B50\u304C\u30B3\u30ED\u30CA\u306B\u611F\u67D3\u3059\u308B\u306E\u306Fn\u3082\u306F\u3084\u6642\u9593\u306E\u554F\u984C\u3060\u308D\u3046..."
   i: 0
   j: 0
   fadeOut: {fileID: 1441941660}

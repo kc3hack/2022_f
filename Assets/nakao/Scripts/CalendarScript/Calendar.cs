@@ -79,12 +79,14 @@ public class Calendar : MonoBehaviour
 		if(day == 32){
 			InfectionManager IM = GameObject.Find("InfectionManager").GetComponent<InfectionManager>();
 			IM.SetInfectionList( JkModel.getInfectionData() );
+			this.Inititalize();
+			BGMManager.BGMInstance.ChangeVolume();
 			SceneManager.LoadScene("Owari");
-			}
+		}
 		nowImage = this.GetComponent<Image>();
 		ChangeSprite();
 		
-		if(GaisyutuEventList.Count == 0)Initialize();
+		if(GaisyutuEventList.Count == 0)CreateTestCase();
     }
 
     //日にちのゲッター
@@ -103,7 +105,7 @@ public class Calendar : MonoBehaviour
 		ChangeSprite();
 	}
 	
-	public void Initialize(){
+	public void CreateTestCase(){
 		//テストケースの作成
 
 		for(int i=0; i<31; i++){
@@ -143,6 +145,13 @@ public class Calendar : MonoBehaviour
 			}
 			SumahoEventList.Add(OneDayMessage);
 		}
+	}
+	public void Inititalize(){
+		JkModel.JKInititalize();
+		GameManager.GetComponent<GameManagerNakao>().SetDay(1);
+		GaisyutuEventList = new List<List<isGoEvent>>();
+		SumahoEventList = new List<List<FriendStatusValue>>();
+		CalendarEventList = new List<int>();
 	}
 	
 	public List<FriendStatusValue> AddMessage(int i, List<FriendStatusValue> ODM){
