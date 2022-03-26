@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class JkModel : MonoBehaviour
 {
@@ -23,10 +24,45 @@ public class JkModel : MonoBehaviour
 
     [SerializeField] private Image jk;
 
+    [SerializeField] private static List<int> infectionData = new List<int>(){
+        2,
+        2,
+        1,
+        4,
+        5,
+        60,
+        70,
+        100,
+        80,
+        90,
+        70,
+        60,
+        50,
+        48,
+        43,
+        42,
+        39,
+        28,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+    };
+
     // Start is called before the first frame update
     void Start()
     {
         changeSprite();
+        
     }
 
     // Update is called once per frame
@@ -53,9 +89,16 @@ public class JkModel : MonoBehaviour
         return stressValue;
     }
 
+    public static List<int> getInfectionData()
+    {
+        return infectionData;
+    }
+
     //ステータスを変化させる
     public void changeStates(int health, int infection, int stress)
     {
+        infectionData.Add(infectionValue);
+
         healthValue += health;
 
         if(healthValue <= 0)
@@ -87,6 +130,7 @@ public class JkModel : MonoBehaviour
         {
             stressValue = 100;
         }
+        
     }
 
     public void changeSprite()
@@ -136,5 +180,11 @@ public class JkModel : MonoBehaviour
         {
             jk.sprite = jks[0];
         }
+
+        if (stressValue >= 70)
+        {
+            SceneManager.LoadScene("Utsu");
+        }
+
     }
 }
