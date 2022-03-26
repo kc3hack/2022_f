@@ -10,7 +10,9 @@ public class GoButton : MonoBehaviour
 	
     public void  OnClick() {
 		//Debug.Log(Destination);
-		GoButtonFadeOut.isFadeOut = true;
+		if(Destination != ""){
+		    GoButtonFadeOut.isFadeOut = true;
+		}
 	}
 	
 	public void Start(){
