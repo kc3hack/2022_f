@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum EventEnum {
 	Empty 		= 0,
@@ -75,6 +76,7 @@ public class Calendar : MonoBehaviour
     void Start()
     {
         day = GameManager.GetComponent<GameManagerNakao>().getDay();
+		if(day == 32)SceneManager.LoadScene("Owari");
 		nowImage = this.GetComponent<Image>();
 		ChangeSprite();
 		
