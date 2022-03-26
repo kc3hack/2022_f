@@ -14,6 +14,7 @@ public class Serihu : MonoBehaviour
 	private const float START_SECONDS = 0.0f;
 	/// <summary>  更新間隔時間(秒)　</summary>
 	private const float INTERVA_SECONDS = 0.15f;
+	[SerializeField] OPEDFadeOut fadeOut;
 	
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class Serihu : MonoBehaviour
     }
 	
 	private void TextProcess(){
+		if(i == serihu.Count) return;
 		//Debug.Log(serihu[i]);
 		if(serihu[i].Length > j){
 			if(serihu[i][j] == 'n')T.text = T.text + "\n";
@@ -39,6 +41,7 @@ public class Serihu : MonoBehaviour
 		i++; j=0;
 		T.text = "";
 		if(serihu.Count == i)
-			SceneManager.LoadScene(next);
+		    fadeOut.ChangeIsFadeOut();
+			//SceneManager.LoadScene(next);
 	}
 }
