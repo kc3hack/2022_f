@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendStatusValue : MonoBehaviour
+public class FriendStatusValue
 {
     private string friendName;
     private string friendMessage;

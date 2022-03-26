@@ -3160,6 +3160,7 @@ GameObject:
   - component: {fileID: 582283900}
   - component: {fileID: 582283899}
   - component: {fileID: 582283898}
+  - component: {fileID: 582283902}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -3200,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1587854079}
+  atHomeEvent: {fileID: 582283902}
 --- !u!114 &582283899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,6 +3296,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582283896}
   m_CullTransparentMesh: 1
+--- !u!114 &582283902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582283896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d705146378d201b489d1afe7b932d830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  healthValue: 0
+  infectionValue: 0
+  stressValue: 0
 --- !u!1 &585405033
 GameObject:
   m_ObjectHideFlags: 0

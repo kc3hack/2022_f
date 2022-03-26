@@ -10,6 +10,7 @@ public class ChangeSleepScene : MonoBehaviour
 
     public void OnClick(){
         gameManager.changeStates(sleepValue);
+        SleepFadeOut.isFadeOut = true;
         gameManager.SceneTransition("SleepScene");
     }
 }
