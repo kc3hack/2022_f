@@ -76,7 +76,11 @@ public class Calendar : MonoBehaviour
     void Start()
     {
         day = GameManager.GetComponent<GameManagerNakao>().getDay();
-		if(day == 32)SceneManager.LoadScene("Owari");
+		if(day == 32){
+			InfectionManager IM = GameObject.Find("InfectionManager").GetComponent<InfectionManager>();
+			IM.SetInfectionList( JkModel.getInfectionData() );
+			SceneManager.LoadScene("Owari");
+			}
 		nowImage = this.GetComponent<Image>();
 		ChangeSprite();
 		
@@ -102,56 +106,6 @@ public class Calendar : MonoBehaviour
 	public void Initialize(){
 		//テストケースの作成
 
-		/*for(int i=0; i<31; i++){
-			GaisyutuEventList.Add(new List<isGoEvent>());
-			GaisyutuEventList[i].Add(new isGoEvent("Place0"));
-			GaisyutuEventList[i].Add(new isGoEvent("Place1"));
-			GaisyutuEventList[i].Add(new isGoEvent("Place2"));
-			GaisyutuEventList[i].Add(new isGoEvent("Place8"));
-		}
-		
-		CalendarEventList = new List<int>() {
-			0,	//（Empty）		一日目のイベント
-			1,	//（Natumatri）	二日目のイベント
-			2,	//（Umi）		　	三日目のイベント
-			3,	//（BBQ）		　	四日目のイベント
-			4,	//（Camp）　		五日目のイベント
-			0,	//（Natumatri）　	六日目のイベント
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		
-			0,	//（Empty）　		三十一日目のイベント
-		};
-		
-		for(int i=0; i<31; i++){
-			List<FriendStatusValue> OneDayMessage = new List<FriendStatusValue>();
-			FriendStatusValue fsv = new FriendStatusValue();
-			fsv.SetName("日付ちゃん"); fsv.SetMessage($"今日は{i+1}日目やで");
-			OneDayMessage.Add(fsv);
-			
-			SumahoEventList.Add(OneDayMessage);
-		}*/
 		for(int i=0; i<31; i++){
 			GaisyutuEventList.Add(new List<isGoEvent>());
 			
