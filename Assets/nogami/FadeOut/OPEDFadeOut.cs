@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class OPEDFadeOut : MonoBehaviour
 {
     private bool isFadeOut = false;
-    private float fadeSpeed = 0.0013f;
+    private float fadeSpeed = 0.013f;
     private float red, green, blue, alfa;
 
     [SerializeField] Image fadeImage;
