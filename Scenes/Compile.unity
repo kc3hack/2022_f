@@ -7816,8 +7816,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 71.36, y: -146.14}
-  m_SizeDelta: {x: 154.56, y: 96.24}
+  m_AnchoredPosition: {x: 114, y: -156.44}
+  m_SizeDelta: {x: 198.72, y: 198.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943246526
 MonoBehaviour:
@@ -7901,15 +7901,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.87665135, g: 0.81280404, b: 0.9716981, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: abbf3f9756e54344799821a96027020a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8579,7 +8579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &1033108790
 Canvas:
   m_ObjectHideFlags: 0
@@ -10656,6 +10656,10 @@ GameObject:
   - component: {fileID: 1280080645}
   - component: {fileID: 1280080644}
   - component: {fileID: 1280080648}
+  - component: {fileID: 1280080652}
+  - component: {fileID: 1280080651}
+  - component: {fileID: 1280080650}
+  - component: {fileID: 1280080649}
   m_Layer: 5
   m_Name: GoButton
   m_TagString: Untagged
@@ -10697,6 +10701,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: 
   GameManager: {fileID: 1971585701}
+  umi: {fileID: 1280080651}
+  natumaturi: {fileID: 1280080649}
+  camp: {fileID: 1280080650}
+  bbq: {fileID: 1280080652}
 --- !u!114 &1280080645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10805,6 +10813,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 601253263}
   goButton: {fileID: 1280080644}
+--- !u!114 &1280080649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280080642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a79012b743493d4fb3485286e47a39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  healthValue: -5
+  infectionValue: 16
+  stressValue: 5
+--- !u!114 &1280080650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280080642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5112ac339014ae24b8cca733a63d81c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  healthValue: -5
+  infectionValue: 10
+  stressValue: 6
+--- !u!114 &1280080651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280080642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c49e1fb4f9fd43488dac08645ad11eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  healthValue: -7
+  infectionValue: 13
+  stressValue: 8
+--- !u!114 &1280080652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280080642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd48a446775d0a4ab7600908be4c9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  healthValue: -6
+  infectionValue: 11
+  stressValue: 6
 --- !u!1 &1282952659
 GameObject:
   m_ObjectHideFlags: 0
@@ -14383,9 +14455,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5016ff67a768fec4aba640236287be8f, type: 3}
   - {fileID: 21300000, guid: fd9b764204884dd47971ebc3342e25c4, type: 3}
   jks:
-  - {fileID: 21300000, guid: c18e30ea14722d84ba665f3150b08d9f, type: 3}
-  - {fileID: 21300000, guid: 3f28500783acfba4aaab53ac91de73f2, type: 3}
-  - {fileID: 21300000, guid: 10fa9c0e5709b7d438e0481c504debbc, type: 3}
+  - {fileID: 21300000, guid: 1a1d43245d5dcf847a51be665f1bc1cd, type: 3}
+  - {fileID: 21300000, guid: 0b6bdc29bbeb1d14aba71ca25f3d2bfd, type: 3}
+  - {fileID: 21300000, guid: a0f66fcb729bf1c4caa1145283d9a06f, type: 3}
   gage: {fileID: 850791770}
   jk: {fileID: 1504022662}
 --- !u!4 &1904368218
