@@ -94,6 +94,8 @@ public class JkModel : MonoBehaviour
         healthValue = 0;
         infectionValue = 0;
         stressValue = 0;
+    }
+    public static void infectionInititalize(){
         infectionData = new List<int>();
     }
 
