@@ -1,6 +1,6 @@
 # KC3Hack 2022 Template
 ## プロダクト名
-## コロナを避ける少女
+# コロナを避ける少女
 ![start_illust](https://user-images.githubusercontent.com/54496533/160267762-e0261abf-8a2f-46e2-a422-bdaecdfe63fe.PNG)
 
 
