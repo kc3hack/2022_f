@@ -75,6 +75,7 @@ public class Calendar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		if(day == 1)JkModel.infectionInititalize();
         day = GameManager.GetComponent<GameManagerNakao>().getDay();
 		if(day == 32){
 			InfectionManager IM = GameObject.Find("InfectionManager").GetComponent<InfectionManager>();

@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class JkModel : MonoBehaviour
 {
 
-    //ï¿½ï¿½ï¿½Nï¿½x ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆŠëŒ¯
+    //E½E½E½NE½x E½E½E½E½E½E½E½E½ÆŠëŒ¯
     [SerializeField] private static int healthValue = 0;
 
-    //ï¿½ï¿½ï¿½ï¿½ï¿½x ï¿½ï¿½ï¿½Ü‚ï¿½ÆŠëŒ¯
+    //E½E½E½E½E½x E½E½E½Ü‚ï¿½ÆŠëŒ¯
     [SerializeField] private static int infectionValue = 0;
 
-    //ï¿½Xï¿½gï¿½ï¿½ï¿½Xï¿½x ï¿½ï¿½ï¿½Ü‚ï¿½ÆŠëŒ¯
+    //E½XE½gE½E½E½XE½x E½E½E½Ü‚ï¿½ÆŠëŒ¯
     [SerializeField] private static int stressValue = 0;
 
     [SerializeField] private List<Sprite> gages;
@@ -73,19 +73,19 @@ public class JkModel : MonoBehaviour
         
     }
 
-    //healthValueï¿½ÌƒQï¿½bï¿½^ï¿½[
+    //healthValueE½ÌƒQE½bE½^E½[
     public int getHealthValue()
     {
         return healthValue;
     }
 
-    //infectionValueï¿½ÌƒQï¿½bï¿½^ï¿½[
+    //infectionValueE½ÌƒQE½bE½^E½[
     public int getInfectionValue()
     {
         return infectionValue;
     }
 
-    //stressValueï¿½ÌƒQï¿½bï¿½^ï¿½[
+    //stressValueE½ÌƒQE½bE½^E½[
     public int getStressValue()
     {
         return stressValue;
@@ -94,6 +94,9 @@ public class JkModel : MonoBehaviour
         healthValue = 0;
         infectionValue = 0;
         stressValue = 0;
+    }
+
+    public static void infectionInititalize(){
         infectionData = new List<int>();
     }
 
@@ -102,7 +105,7 @@ public class JkModel : MonoBehaviour
         return infectionData;
     }
 
-    //ï¿½Xï¿½eï¿½[ï¿½^ï¿½Xï¿½ï¿½Ï‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //E½XE½eE½[E½^E½XE½E½Ï‰ï¿½E½E½E½E½E½E½
     public void changeStates(int health, int infection, int stress)
     {
         infectionData.Add(infectionValue);
